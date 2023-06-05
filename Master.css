@@ -74,6 +74,7 @@ ul {
 
 .main-nav a:hover {
     color: #00b39b;
+    text-decoration: none;
 }
 
 #About {
@@ -123,6 +124,10 @@ ul {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+#Departments:hover {
+    color:#00b39b;
 }
 
 .main_section { 
@@ -253,7 +258,7 @@ h1, h2, h3, h4 {
 .main_3_logos {
     display: grid;
     width: calc((100% * 2) / 3);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 25% 25% 25% 12.5% 12.5%;
     align-items: center;
 }   
 
@@ -270,27 +275,28 @@ h1, h2, h3, h4 {
     height: 34px;
 }
 
-.main_3_logos .logo_clinic-cloud , .main_3_logos .logo_gipo {
-    width: 12.5%;
-}
-
 .main_3_logos li {
-    display: inline-block;
     margin-top: 0;
     font-size: 1rem;
     padding: 5px 0 5px 5px;
 }
 
 .main_3_logos a {
-    display: inline-block;
     padding: 5px 0px;
 }
 
 .main_3_logos a svg {
-    display: inline-block;
     height: 20px;
     width: auto;
     max-width: 100%;
+}
+
+.main_3_logos a path {
+    fill: hsla(0,0%,67%,.7);
+}
+
+.main_3_logos a img {
+    filter: invert(98%) sepia(2%) saturate(0) hue-rotate(180deg) brightness(300%) contrast(0);
 }
 
 .main_header {
@@ -302,11 +308,57 @@ h1, h2, h3, h4 {
     margin: 3.125rem auto 5.5rem;
 }
 
+.flex_4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -10px;
+}
+
+.grid_2 {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: repeat(2,auto);
+    align-items: center;
+}
+
+.main_box {
+    padding: 10px;
+    min-height: 1px;
+}
+
+.stats_item {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.05);
+    height: 250px;
+    text-align: center;
+    padding: 15px;
+    font-size: .8125em;
+}
+
+.stats_item p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.stats_item h3 {
+    font-size: 1.8461538462em;
+    color: #00b39b;
+    margin: 0.5em 0;
+}
+
+.header {
+    margin-top: 2em;
+}
+
 .header:before {
     content: "";
     position: absolute;
     right: 67%;
-    top: 55%;
+    top: 45%;
     background: url(./pictures/logo.png) no-repeat;
     width: 456px;
     height: 435px;
@@ -314,12 +366,19 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 
-.header {
-    margin-top: 2em;
+.vert-align {
+    display: table;
+    width: 100%;
+    height: 100%;
 }
 
-.flex_4 {
-    display: flex;
+.vert-align > * {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .main_card {
@@ -370,3 +429,26 @@ h1, h2, h3, h4 {
     font-size: .625rem;
     padding: 1em 1.5em;
 }
+
+
+@media screen and (max-width: 870px){
+    .main_4 {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .flex_4 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+}
+
+
